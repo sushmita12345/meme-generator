@@ -22,11 +22,17 @@ export default function Meme() {
         })
     }
 
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+    const [allMeme, setAllMeme] = React.useState([])
+
+    React.useEffect(async () => {
+        const res = await fetch("https://api.imgflip.com/get_memes")
+        const data = res.json()
+        setAllMeme(data.data.memes)
+    }, [])
     function memeData() {
-        const memesArray = allMemeImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length )
-        const url = memesArray[randomNumber].url
+        
+        const randomNumber = Math.floor(Math.random() * allMeme.length )
+        const url = allMeme[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
