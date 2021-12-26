@@ -1,7 +1,7 @@
 import React from "react"
 
 
-export default function Meme() {
+export default function Meme(props) {
     // const [memeImage, getMemeImage] = React.useState("http://i.imgflip.com/1bij.jpg");
     const [meme, setMeme] = React.useState({
         topText: "",
@@ -46,7 +46,7 @@ export default function Meme() {
     }
 
     return (
-        <main>
+        <main className={props.darkMode ? "dark" : ""}>
         
             <div className="form">
                 <input 
