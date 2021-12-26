@@ -1,7 +1,4 @@
 import React from "react"
-import memesData from "../memesData.js"
-
-
 
 
 export default function Meme() {
@@ -12,35 +9,42 @@ export default function Meme() {
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
 
-    function clickHandle(event) {
-        const {name, value} = event.target
-        setMeme(prevState => {
-            return {
-                ...prevState,
-                [name]: [value]
-            }
-        })
-    }
-
-    const [allMeme, setAllMeme] = React.useState([])
+    
+    const [allMemes, setAllMemes] = React.useState([])
 
     React.useEffect(async () => {
         const res = await fetch("https://api.imgflip.com/get_memes")
-        const data = res.json()
-        setAllMeme(data.data.memes)
+        const data = await res.json()
+        setAllMemes(data.data.memes)
+        // async function getMeme() {
+        //     const res = await fetch("https://api.imgflip.com/get_memes")
+        //     const data = res.json()
+        //     setAllMemes(data.data.memes)
+        // }
+
+        // getMeme()
+        
     }, [])
     function memeData() {
         
-        const randomNumber = Math.floor(Math.random() * allMeme.length )
-        const url = allMeme[randomNumber].url
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
         } ))
 
-            
-    
     }
+
+    function clickHandle(event) {
+        const {name, value} = event.target
+        setMeme(prevState => ({
+            ...prevState,
+            [name]: value
+            
+        }))
+    }
+
     return (
         <main>
         
