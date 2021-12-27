@@ -13,7 +13,7 @@ export default function Meme(props) {
     const [allMemes, setAllMemes] = React.useState([])
 
     React.useEffect(async () => {
-        const res = await fetch("https:\/\/i.imgflip.com\/46e43q.png")
+        const res = await fetch("https://api.imgflip.com/get_memes")
         const data = await res.json()
         setAllMemes(data.data.memes)
         // async function getMeme() {
