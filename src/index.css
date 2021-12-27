@@ -86,12 +86,12 @@ main {
 
 .meme-image {
   max-width: 100%;
-  height: 55vh;
+  height: 50vh;
   border-radius: 3px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 55%;
+  width: 60%;
   
 }
 
