@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./components/Header"
 import Meme from "./components/Meme"
+import Footer from "./components/Footer"
 import './App.css';
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
     <div className="container">
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
       <Meme darkMode={darkMode}/>
+      <Footer darkMode={darkMode}/>
     </div>
+    
   );
 }
 

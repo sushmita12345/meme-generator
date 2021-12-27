@@ -81,16 +81,19 @@ main {
 
 .meme {
   position: relative;
+  
 }
 
 .meme-image {
   max-width: 100%;
+  height: 50vh;
   border-radius: 3px;
-  /* padding: 15px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
   
 }
-
-
 
 .meme-card {
   position: absolute;
@@ -153,7 +156,7 @@ main.dark .form-button{
 
 main.dark .main-container{
   background-color: #282D35;;
-  height: 100vh;
+  /* height: 20vh; */
 }
 
 nav.dark {
@@ -233,4 +236,51 @@ nav.dark .toggler-dark {
 
 nav.dark .toggler--slider {
   justify-content: flex-end;
+}
+
+/* Footer */
+footer.dark .social-container{
+  background-color: white;
+  color: black;
+}
+
+
+.social-container {
+  background: #61DBFB;
+  padding: 25px 50px;
+  text-align: center;
+  color: white;
+  
+  
+}
+
+
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.discord {
+  color: #738ADB;
+}
+
+a.github {
+  color: #211F1F;
+}
+
+a.twitter {
+  color: #49a1eb;
+}
+
+a.instagram {
+  background: linear-gradient(to right, #6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  -webkit-background-clip: outline;
+  -webkit-text-fill-color: transparent;
+  border-radius: 5px;
+  /* color: black; */
 }
