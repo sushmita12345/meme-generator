@@ -288,6 +288,7 @@ a.instagram {
 @media only screen and (max-width: 600px) {
   .meme-image {
     height: 41vh;
+    width: 65vw;
   }
 
   .size {
