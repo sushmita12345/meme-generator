@@ -86,12 +86,12 @@ main {
 
 .meme-image {
   max-width: 100%;
-  height: 50vh;
+  height: 55vh;
   border-radius: 3px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 55%;
   
 }
 
@@ -283,4 +283,14 @@ a.instagram {
   -webkit-text-fill-color: transparent;
   border-radius: 5px;
   /* color: black; */
+}
+
+@media only screen and (max-width: 600px) {
+  .meme-image {
+    height: 41vh;
+  }
+
+  .size {
+    font-size: 25px;
+  }
 }

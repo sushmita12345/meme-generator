@@ -14,16 +14,16 @@ export default function Footer(props) {
                 <h3 classNmae="social-follow">Social Follow</h3>
                 
                 <a href="https://www.youtube.com/c/jamesqquick" className="discord social">
-                    <FontAwesomeIcon icon={faDiscord} size="2x" />
+                    <FontAwesomeIcon icon={faDiscord} size="2x" className="size"/>
                 </a>
                 <a href="https://www.facebook.com/learnbuildteach/" className="github social">
-                    <FontAwesomeIcon icon={faGithub} size="2x" />
+                    <FontAwesomeIcon icon={faGithub} size="2x" className="size"/>
                 </a>
                 <a href="https://www.twitter.com/jamesqquick" className="twitter social">
-                    <FontAwesomeIcon icon={faTwitter} size="2x" />
+                    <FontAwesomeIcon icon={faTwitter} size="2x" className="size"/>
                 </a>
                 <a href="https://www.instagram.com/learnbuildteach" className="instagram social">
-                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                    <FontAwesomeIcon icon={faInstagram} size="2x" className="size"/>
                 </a>
                 
             </div>
