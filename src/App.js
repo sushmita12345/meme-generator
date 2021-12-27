@@ -11,7 +11,7 @@ function App() {
     setDarkMode(prevMode => !prevMode)
   }
   return (
-    <div className="App">
+    <div className="container">
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
       <Meme darkMode={darkMode}/>
     </div>

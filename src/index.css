@@ -8,6 +8,7 @@ body {
 }
 
 
+
 /* .header {
   display: flex;
   align-items: center;
@@ -139,10 +140,26 @@ nav {
   z-index: 1;
 }
 
+nav.dark .meme-text {
+  color: black;
+  /* background-color: white; */
+}
 
+main.dark .form-button{
+  background-color: white;
+  color: black;
+  
+} 
+
+main.dark .main-container{
+  background-color: #282D35;;
+  height: 100vh;
+}
 
 nav.dark {
-  background-color: #61DBFB;
+  background-color: white;
+  /* background-color: #61DBFB; */
+  /* color: black; */
   /* background-color: #21222A; */
   /* background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%); */
 }

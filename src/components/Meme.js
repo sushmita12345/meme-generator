@@ -47,35 +47,36 @@ export default function Meme(props) {
 
     return (
         <main className={props.darkMode ? "dark" : ""}>
-        
-            <div className="form">
-                <input 
-                    type="text" 
-                    placeholder="Top text" 
-                    className="form-input"
-                    name="topText"
-                    value={meme.topText}
-                    onChange={clickHandle}
-                />
-                <input 
-                    type="text" 
-                    placeholder="Bottom text" 
-                    className="form-input"
-                    name="bottomText"
-                    value={meme.bottomText}
-                    onChange={clickHandle}
-                />
+            <div className="main-container">
+                <div className="form">
+                    <input 
+                        type="text" 
+                        placeholder="Top text" 
+                        className="form-input"
+                        name="topText"
+                        value={meme.topText}
+                        onChange={clickHandle}
+                    />
+                    <input 
+                        type="text" 
+                        placeholder="Bottom text" 
+                        className="form-input"
+                        name="bottomText"
+                        value={meme.bottomText}
+                        onChange={clickHandle}
+                    />
 
-            
-                <button 
-                    className="form-button" onClick={memeData}>
-                    Get a new meme image 🖼
-                </button>
-            </div>
-            <div className="meme">
-                <img src={meme.randomImage} className="meme-image"/>
-                <h2 className="meme-card top">{meme.topText}</h2>
-                <h2 className="meme-card bottom">{meme.bottomText}</h2>
+                
+                    <button 
+                        className="form-button" onClick={memeData}>
+                        Get a new meme image 🖼
+                    </button>
+                </div>
+                <div className="meme">
+                    <img src={meme.randomImage} className="meme-image"/>
+                    <h2 className="meme-card top">{meme.topText}</h2>
+                    <h2 className="meme-card bottom">{meme.bottomText}</h2>
+                </div>
             </div>
         </main>
         
