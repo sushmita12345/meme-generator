@@ -11,7 +11,7 @@ export default function Footer(props) {
     return (
         <footer className={props.darkMode ? "dark" : ""}>
             <div className="social-container">
-                <h3 classNmae="social-follow">Social Follow</h3>
+                <h3 className="social-follow">Social Follow</h3>
                 
                 <a href="https://linkedin.com/in/sushmita-gupta888" target="_blank" className="linkedin social">
                     <FontAwesomeIcon icon={faLinkedin} size="2x" className="size"/>

@@ -11,6 +11,7 @@ export default function Meme(props) {
 
     
     const [allMemes, setAllMemes] = React.useState([])
+    // console.log(allMemes);
 
     React.useEffect(async () => {
         const res = await fetch("https://api.imgflip.com/get_memes")
@@ -36,6 +37,8 @@ export default function Meme(props) {
 
     }
 
+    // console.log(meme.randomImage);
+
     function clickHandle(event) {
         const {name, value} = event.target
         setMeme(prevState => ({
@@ -57,6 +60,7 @@ export default function Meme(props) {
                         value={meme.topText}
                         onChange={clickHandle}
                     />
+
                     <input 
                         type="text" 
                         placeholder="Bottom text" 

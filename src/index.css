@@ -294,4 +294,10 @@ a.instagram {
   .size {
     font-size: 25px;
   }
+  .top {
+    font-size: 15px;
+  }
+  .bottom {
+    font-size: 15px;
+  }
 }
