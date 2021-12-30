@@ -51,24 +51,36 @@ main {
 }
 
 .form {
-  
-  display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  /* display: grid; */
+  /* grid-template: 40px 40px / 1fr 1fr; */
   gap: 17px;
   margin-bottom: 18px;
+  
 }
 
-.form-input {
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  height: 7vh;
+  /* width: 20%; */
+}
+
+.form--input {
   font-family: "Karla", sans-serif;
   border-radius: 5px;
   border: 1px solid #D5D4D8;
   text-indent: 5px;
-  overflow: hidden;
+  width: 44vw;
+  
+ 
+  /* overflow: hidden; */
 
 }
 
-.form-button {
-  grid-column: 1 / -1;
+.form--button {
+  /* grid-column: 1 / -1; */
   font-family: "Karla", sans-serif;
   background-color: #61DBFB;
   /* background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%); */
@@ -76,6 +88,7 @@ main {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  height: 7vh;
   
 }
 
@@ -148,7 +161,7 @@ nav.dark .meme-text {
   /* background-color: white; */
 }
 
-main.dark .form-button{
+main.dark .form--button{
   background-color: white;
   color: black;
   
@@ -250,6 +263,7 @@ footer.dark .social-container{
   padding: 25px 50px;
   text-align: center;
   color: white;
+  height: 20vh;
   
   
 }
@@ -285,10 +299,26 @@ a.instagram {
   /* color: black; */
 }
 
+.canvas-image {
+  max-width: 100%;
+  height: 50vh;
+  border-radius: 3px;
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50vw; */
+  
+}
+
 @media only screen and (max-width: 600px) {
-  .meme-image {
-    height: 41vh;
-    width: 65vw;
+  .canvas-image {
+    height: 42vh;
+    width: 70vw;
+    /* display: block; */
+    /* margin-left: auto;
+    margin-right: auto; */
   }
 
   .size {
@@ -296,8 +326,22 @@ a.instagram {
   }
   .top {
     font-size: 15px;
+    /* width: 10vw; */
   }
   .bottom {
     font-size: 15px;
+  }
+
+  .form {
+    justify-content: center;
+  }
+
+  .form--input{
+    width: 36vw;
+  }
+  .form--button {
+    margin: auto;
+    float: left;
+    
   }
 }
