@@ -1,7 +1,9 @@
 import React from "react"
 import memesData from "../memesData.js"
+import CardMedia from "@material-ui/core/CardMedia";
 
 export default function Meme(props) {
+    // const { CardMedia } = MaterialUI
     const [meme, setMeme] = React.useState({
       topText: "",
       bottomText: "",
@@ -9,6 +11,7 @@ export default function Meme(props) {
     })
     const [allMemeImages, setAllMemeImages] = React.useState(memesData)
     const canvas = React.useRef([])
+    const [finalSrc, setFinalSrc] = React.useState(null)
 
     function getMemeImage() {
       const memesArray = allMemeImages.data.memes
@@ -40,7 +43,7 @@ export default function Meme(props) {
             ctx.textAlign = "center"
             ctx.fillText(meme.topText, (600 / 2), 60)
             ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
-            const imgUrl = canvas.current.toDataURL("image/jpeg");
+            setFinalSrc(canvas.current.toDataURL("image/jpeg"));
     
 
         
@@ -49,6 +52,9 @@ export default function Meme(props) {
         // console.log(dataURL);
         
     }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
+
+
+    
 
     function clickHandle(event) {
       const {name, value} = event.target
@@ -93,6 +99,7 @@ export default function Meme(props) {
                 
                 
                 <div className="meme">
+                    {finalSrc && <CardMedia image={finalSrc} style={{geight: 450, width: 600}} />}
                     <canvas ref={canvas} width={600} height={450} className="canvas-image"/>
                     
                     {/* <img ref="image" src={meme.randomImage} className="meme--image" /> */}
