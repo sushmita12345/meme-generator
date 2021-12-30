@@ -27,6 +27,7 @@ export default function Meme(props) {
     React.useEffect(() => {
         const ctx = canvas.current.getContext("2d")
         const image = new Image();
+        image.crossOrigin = 'anonymous';
         //image.src = meme[memeIndex].url
         image.src = meme.randomImage
         image.onload = () => {
@@ -39,8 +40,13 @@ export default function Meme(props) {
             ctx.textAlign = "center"
             ctx.fillText(meme.topText, (600 / 2), 60)
             ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
-        }
+            const imgUrl = canvas.current.toDataURL("image/jpeg");
+    
+
         
+        }
+        // let dataURL = canvas.toDataURL("image/png");
+        // console.log(dataURL);
         
     }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
 
@@ -88,6 +94,7 @@ export default function Meme(props) {
                 
                 <div className="meme">
                     <canvas ref={canvas} width={600} height={450} className="canvas-image"/>
+                    
                     {/* <img ref="image" src={meme.randomImage} className="meme--image" /> */}
                     {/* <h2 className="meme--text top">{meme.topText}</h2>
                     <h2 className="meme--text bottom">{meme.bottomText}</h2> */}
