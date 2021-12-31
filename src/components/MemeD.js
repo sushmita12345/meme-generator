@@ -27,31 +27,31 @@ export default function Meme(props) {
       }))
       
     }
-    // React.useEffect(() => {
-    //     const ctx = canvas.current.getContext("2d")
-    //     const image = new Image();
-    //     image.crossOrigin = 'anonymous';
-    //     //image.src = meme[memeIndex].url
-    //     image.src = meme.randomImage
-    //     image.onload = () => {
-    //         ctx.drawImage(image, 0, 0, 600, 450)
-    //         // ctx.fillStyle = "black"
-    //         // ctx.fillRect(0, 0, 800, 256 + 80)
-    //         ctx.font = "40px Courier";
-    //         //ctx.font = "30px Courier New";
-    //         ctx.fillStyle = "white"
-    //         ctx.textAlign = "center"
-    //         ctx.fillText(meme.topText, (600 / 2), 60)
-    //         ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
-    //         //setFinalSrc(canvas.current.toDataURL("image/jpeg"));
+    React.useEffect(() => {
+        const ctx = canvas.current.getContext("2d")
+        const image = new Image();
+        image.crossOrigin = 'anonymous';
+        //image.src = meme[memeIndex].url
+        image.src = meme.randomImage
+        image.onload = () => {
+            ctx.drawImage(image, 0, 0, 600, 450)
+            // ctx.fillStyle = "black"
+            // ctx.fillRect(0, 0, 800, 256 + 80)
+            ctx.font = "40px Courier";
+            //ctx.font = "30px Courier New";
+            ctx.fillStyle = "white"
+            ctx.textAlign = "center"
+            ctx.fillText(meme.topText, (600 / 2), 60)
+            ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
+            //setFinalSrc(canvas.current.toDataURL("image/jpeg"));
     
 
         
-    //     }
-    //     // let dataURL = canvas.toDataURL("image/png");
-    //     // console.log(dataURL);
+        }
+        // let dataURL = canvas.toDataURL("image/png");
+        // console.log(dataURL);
         
-    // }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
+    }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
 
     React.useEffect(() => {
         const ctx = canvas.current.getContext("2d")
