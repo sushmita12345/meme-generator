@@ -38,8 +38,8 @@ export default function Meme(props) {
             // ctx.fillStyle = "black"
             // ctx.fillRect(0, 0, 800, 256 + 80)
             
-            //ctx.font = "bold 40px Arial";
-            ctx.font = "35px Courier New";
+            ctx.font = "bold 40px Biryani";
+            //ctx.font = "35px Courier New";
             ctx.fillStyle = "white"
             ctx.textAlign = "center"
             ctx.strokeStyle = "black"
