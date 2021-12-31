@@ -11,14 +11,12 @@ export default function Meme(props) {
     })
     const [allMemeImages, setAllMemeImages] = React.useState(memesData)
     const canvas = React.useRef([])
-    const [finalSrc, setFinalSrc] = React.useState(null)
+    // const [finalSrc, setFinalSrc] = React.useState(null)
 
     function getMemeImage() {
       const memesArray = allMemeImages.data.memes
-    //   console.log(memesArray)
       const randomNumber = Math.floor(Math.random() * memesArray.length)
       const url = memesArray[randomNumber].url
-      console.log(url);
   
       setMeme(prevMeme => ({
           ...prevMeme,
@@ -27,6 +25,8 @@ export default function Meme(props) {
       }))
       
     }
+    
+
     React.useEffect(() => {
         const ctx = canvas.current.getContext("2d")
         const image = new Image();
@@ -44,42 +44,9 @@ export default function Meme(props) {
             ctx.fillText(meme.topText, (600 / 2), 60)
             ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
             //setFinalSrc(canvas.current.toDataURL("image/jpeg"));
-    
-
-        
         }
-        // let dataURL = canvas.toDataURL("image/png");
-        // console.log(dataURL);
         
     }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
-
-    React.useEffect(() => {
-        const ctx = canvas.current.getContext("2d")
-        const image = new Image();
-        image.crossOrigin = 'anonymous';
-        //image.src = meme[memeIndex].url
-        image.src = meme.randomImage
-        image.onload = () => {
-            ctx.drawImage(image, 0, 0, 600, 450)
-            // ctx.fillStyle = "black"
-            // ctx.fillRect(0, 0, 800, 256 + 80)
-            ctx.font = "40px Courier";
-            //ctx.font = "30px Courier New";
-            ctx.fillStyle = "white"
-            ctx.textAlign = "center"
-            ctx.fillText(meme.topText, (600 / 2), 60)
-            ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
-            setFinalSrc(canvas.current.toDataURL("image/jpeg"));
-    
-
-        
-        }
-        // let dataURL = canvas.toDataURL("image/png");
-        // console.log(dataURL);
-        
-    }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
-
-    
 
     function clickHandle(event) {
       const {name, value} = event.target
@@ -89,6 +56,16 @@ export default function Meme(props) {
           
       }))
     }
+
+    function download(){
+        const ctx = canvas.current.getContext("2d")
+        // var canvas = document.getElementById("canvas");
+        var url = canvas.current.toDataURL("image/png");
+        var link = document.createElement('a');
+        link.download = 'filename.png';
+        link.href = url;
+        link.click();
+      }
 
     return (
         <main className={props.darkMode ? "dark" : ""}>
@@ -124,8 +101,9 @@ export default function Meme(props) {
                 
                 
                 <div className="meme">
-                    {finalSrc && <CardMedia image={finalSrc} style={{geight: 450, width: 600}} />}
+                    {/* {finalSrc && <CardMedia image={finalSrc} style={{geight: 450, width: 600}} />} */}
                     <canvas ref={canvas} width={600} height={450} className="canvas-image"/>
+                    <button className="btn-click" onClick={download}>Download</button>
                     
                     {/* <img ref="image" src={meme.randomImage} className="meme--image" /> */}
                     {/* <h2 className="meme--text top">{meme.topText}</h2>

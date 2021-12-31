@@ -63,7 +63,7 @@ main {
 .form-container {
   display: flex;
   justify-content: space-between;
-  height: 7vh;
+  height: 6vh;
   /* width: 20%; */
 }
 
@@ -88,12 +88,16 @@ main {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  height: 7vh;
+  height: 6vh;
   
 }
 
 .meme {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   
 }
 
@@ -312,9 +316,20 @@ a.instagram {
   
 }
 
+.btn-click {
+  background-color: #61DBFB;
+  border: none;
+  height: 6vh;
+  width: 30vw;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  
+}
+
 @media only screen and (max-width: 600px) {
   .canvas-image {
-    height: 42vh;
+    height: 40vh;
     width: 70vw;
     /* display: block; */
     /* margin-left: auto;
