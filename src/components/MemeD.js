@@ -37,13 +37,22 @@ export default function Meme(props) {
             ctx.drawImage(image, 0, 0, 600, 450)
             // ctx.fillStyle = "black"
             // ctx.fillRect(0, 0, 800, 256 + 80)
-            ctx.font = "40px Courier";
-            //ctx.font = "30px Courier New";
+            
+            //ctx.font = "bold 40px Arial";
+            ctx.font = "35px Courier New";
             ctx.fillStyle = "white"
             ctx.textAlign = "center"
-            ctx.fillText(meme.topText, (600 / 2), 60)
-            ctx.fillText(meme.bottomText, (600 / 2), 256 + 40 + 50)
-            //setFinalSrc(canvas.current.toDataURL("image/jpeg"));
+            ctx.strokeStyle = "black"
+            ctx.lineWidth = 5
+            ctx.strokeText(meme.topText.toUpperCase(), (600 / 2), 60)
+            ctx.strokeText(meme.bottomText.toUpperCase(), (600 / 2), 256 + 40 + 50)
+            ctx.fillText(meme.topText.toUpperCase(), (600 / 2), 60)
+            ctx.fillText(meme.bottomText.toUpperCase(), (600 / 2), 256 + 40 + 50)
+            //ctx.Width(meme.topText, (600 / 2), 60)
+            //ctx.Width(meme.bottomText, (600 / 2), 256 + 40 + 50)
+            
+            ctx.stroke();
+            
         }
         
     }, [meme.randomImage, canvas, meme.topText, meme.bottomText])
