@@ -327,6 +327,11 @@ a.instagram {
   
 }
 
+main.dark .btn-click {
+  background-color: white;
+  color: black;
+}
+
 @media only screen and (max-width: 600px) {
   .canvas-image {
     height: 40vh;
